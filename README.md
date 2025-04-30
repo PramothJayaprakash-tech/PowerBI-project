@@ -57,5 +57,78 @@ INSERT INTO Product VALUES
 (4, 1, 'Red', 'Quad', 43.95, 13.75),
 (5, 1, 'Blue', 'Black Monk', 43.95, 13.75);
 
+
 ---
+
+## 🧠 Power BI Data Model
+🔗 Key Relationships
+All tables are connected using one-to-many relationships to enable efficient filtering and aggregation:
+
+Categories → SubCategory → Product → Sales
+
+Sales → DateMaster, Geography, Sales rep
+
+
+---
+
+
+## 📅 Date Table (DAX)
+A custom date dimension was generated using the following DAX formula:
+
+DateMaster = CALENDAR(FIRSTDATE(Sales[Date]), LASTDATE(Sales[Date]))
+Additional calculated columns like Month Name, Quarter, Week Day, and Month Order were added for advanced time-series filtering and visual clarity.
+
+
+---
+
+
+## 📊 Key Dashboard Features
+✅ KPI Cards
+Total Revenue: 2.18M
+
+Gross Profit: 1.50M
+
+Units Sold: 69K
+
+## 📌 Visualizations
+Pie Chart: Distribution of Revenue by SubCategory
+
+Waterfall Chart: Year-over-Year Product Revenue Trends
+
+Matrix Table: Product-wise Revenue Values
+
+Slicers: Country, Year, and Month filters for user interactivity
+
+
+---
+
+
+## 📸 Screenshots
+
+![Screenshot (1331)](https://github.com/user-attachments/assets/9a604e61-ba09-4dab-980f-af7d6c04180e)
+
+
+---
+
+
+📈 What I Learned / Did
+Designed a star schema model and implemented proper relationships.
+
+Built a custom calendar with dynamic DAX fields for slicing and time-based trends.
+
+Wrote SQL scripts to generate and populate source data.
+
+Developed calculated columns, measures, and KPIs in DAX.
+
+Crafted visually engaging and business-ready dashboards.
+
+
+
+---
+
+
+
+👨‍💻 Author
+Pramoth Jayaprakash
+🎓 Master's in Applied Computer Science
 
