@@ -37,26 +37,6 @@ The data is sourced from a custom-built SQL Server database called `ProductDB`. 
 
 ---
 
-## 🧾 SQL Sample: Product Table Creation
-
-```sql
-CREATE TABLE Product (
-    ProductID INT,
-    SubCategoryKey INT,
-    Color VARCHAR(50),
-    ProductName VARCHAR(100),
-    RetailPrice DECIMAL(10,2),
-    StandardCost DECIMAL(10,2)
-);
-
--- Sample Insert
-INSERT INTO Product VALUES
-(1, 3, 'Red', 'Alder', 23.95, 7.55),
-(2, 2, 'Blue', 'Linder', 23.95, 7.55),
-(3, 2, 'Green', 'Magnum', 23.95, 7.55),
-(4, 1, 'Red', 'Quad', 43.95, 13.75),
-(5, 1, 'Blue', 'Black Monk', 43.95, 13.75);
-
 
 ## 🧠 Power BI Data Model
 🔗 Key Relationships
@@ -66,23 +46,23 @@ Categories → SubCategory → Product → Sales
 
 Sales → DateMaster, Geography, Sales rep
 
-
 ---
 
-
-##📅 Date Table (DAX)
+## 📅 Date Table (DAX)
 A custom date dimension was generated using the following DAX formula:
 
 DateMaster = CALENDAR(FIRSTDATE(Sales[Date]), LASTDATE(Sales[Date]))
 Additional calculated columns like Month Name, Quarter, Week Day, and Month Order were added for advanced time-series filtering and visual clarity.
 
-##📊 Key Dashboard Features
+## 📊 Key Dashboard Features
 ✅ KPI Cards
 Total Revenue: 2.18M
 
 Gross Profit: 1.50M
 
 Units Sold: 69K
+
+---
 
 ## 📌 Visualizations
 Pie Chart: Distribution of Revenue by SubCategory
@@ -93,12 +73,15 @@ Matrix Table: Product-wise Revenue Values
 
 Slicers: Country, Year, and Month filters for user interactivity
 
+---
+
 ## 📸 Screenshots
 
 ![Screenshot (1331)](https://github.com/user-attachments/assets/9a604e61-ba09-4dab-980f-af7d6c04180e)
 
+---
 
-📈 What I Learned / Did
+## 📈 What I Learned / Did
 Designed a star schema model and implemented proper relationships.
 
 Built a custom calendar with dynamic DAX fields for slicing and time-based trends.
@@ -109,7 +92,9 @@ Developed calculated columns, measures, and KPIs in DAX.
 
 Crafted visually engaging and business-ready dashboards.
 
-👨‍💻 Author
+---
+
+## 👨‍💻 Author
 Pramoth Jayaprakash
 🎓 Master's in Applied Computer Science
 
